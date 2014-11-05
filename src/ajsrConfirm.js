@@ -1,16 +1,10 @@
 (function($) {
 
-    console.log("ajsrConfirm plug-in!");
-
-    //title,  --
-    //text, --
-    //onCancel
-    //onConfirm, 
-    //cancelButtonText, 
-    //confirmButtonText, 
-    //dlgClass
+    console.log("////////////////// ajsrConfirm plug-in!");
 
     $.ajsrConfirm = function(options, e) {
+
+        console.log("////////////////// options:", options );
 
         //'use strict';
 
@@ -29,22 +23,17 @@
         var parameters = $.extend(defaults, options);
 
         var htmlString = '';
-        htmlString += '<div  class="ajsrConfirm-back-bg" style="background-color: black; height: 100%; left: 0; opacity: 0.6; position: absolute; top: 0; width: 100%;"></div>';
+        htmlString += '<div  class="ajsrConfirm-back-bg" style="background-color: black; height: 100%; left: 0; opacity: 0.6; position: absolute; top: 0; width: 100%; z-index: 10000;"></div>';
 
         var timestamp = Date.now();
-        htmlString +=   '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" >' +
-                          // '<div id="ajsrConfirm-wave" class="ajsrConfirm-wave"> </div>' +
-                          // '<div id="ajsrConfirm-ui-image" class="ajsrConfirm-ui-image"> </div>' +
-                          // '<div class="ajsrConfirm-title">' + parameters.title + '</div>' +
-                          // '<div id="ajsrConfirm-brush" class="ajsrConfirm-brush"> </div>' +
-                          // '<div id="ajsrConfirm-mirror" class="ajsrConfirm-mirror"> </div>' +
-                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'close\')">Cancel</button>' +
-                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'save\')">OK</button>' +
+        htmlString +=   '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" style="background-color: red; display: block; position: absolute; z-index: 10001; ">' +
+                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'CANCEL\')">Cancel</button>' +
+                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'OK\')">OK</button>' +
                         '</div>';
 
-        if ( $("#window-brush-editor").length === 0 ){ // TODO: Check out this ASAP!
+        if ( $(".ajsrConfirm").length === 0 ){ // TODO: Check out this ASAP!
 
-            console.log("brushEditor! create!");
+            console.log("////////////////// brushEditor! create!");
 
             var link = $("body");
             link.append(htmlString);
@@ -120,23 +109,26 @@
 
         if (options === "OK") { // TODO: This is awful! The number of binded events increase every time we close the window.
 
-
+            console.log("... OK!");
+            btnOK();
         }
 
         if (options === "CANCEL") { // TODO: This is awful! The number of binded events increase every time we close the window.
 
-            close(); 
+            console.log("... CANCEL!");
+            //close(); 
+            btnCancel()
             
         }
 
         function btnCancel(){
-            console.log("ajsrConfirm! btnCancel!");
+            console.log("////////////////// ajsrConfirm! btnCancel!");
             defaults.beforeClose();
             destroy();
         }
 
         function btnOK(){
-            console.log("ajsrConfirm! btnOK!");
+            console.log("////////////////// ajsrConfirm! btnOK!");
             defaults.beforeClose();
             destroy();
         }
@@ -144,7 +136,7 @@
         function destroy(){
             $(".ajsrConfirm-back-bg").remove();
             //$(blackBoard.cvObj).off();
-            $("#ajsrConfirm").remove();  
+            $(".ajsrConfirm").remove();  
 
             defaults.whenDestroyed();   
 
