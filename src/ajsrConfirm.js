@@ -1,10 +1,22 @@
 (function($) {
 
-    console.log("////////////////// ajsrConfirm plug-in!");
+    console.log("ajsrConfirm plug-in!");
+
+    /*
+    $.ajsrConfirm.defaults = {
+        title: 'ajsrConfirm 1.0 - Andres J. Soria R. 2014',
+        message: 'Do you really want to do that?',
+        okButton: 'OK',
+        cancelButton: 'Cancel',
+        onConfirm: function(){},
+        onCancel: function(){},
+        beforeOpen: function(){},
+        beforeClose: function(){},
+        whenDestroyed: function(){}
+    };
+    */
 
     $.ajsrConfirm = function(options, e) {
-
-        console.log("////////////////// options:", options );
 
         //'use strict';
 
@@ -13,47 +25,35 @@
             message: 'Do you really want to do that?',
             okButton: 'OK',
             cancelButton: 'Cancel',
-            onConfirm: function(){},
-            onCancel: function(){},
-            beforeOpen: function(){},
-            beforeClose: function(){},
-            whenDestroyed: function(){}
-        };
+            onConfirm: function(){ console.log("onConfirm: do nothing by default"); },
+            onCancel: function(){ console.log("onCancel: do nothing by default"); },
+            beforeOpen: function(){ console.log("beforeOpen: do nothing by default"); },
+            beforeClose: function(){ console.log("beforeClose: do nothing by default"); },
+            whenDestroyed: function(){ console.log("whenDestroyed: do nothing by default"); }
+        },
 
-        var parameters = $.extend(defaults, options);
+            parameters = $.extend(defaults, options),
+            timestamp = Date.now(),
+            htmlString = '';
 
-        var htmlString = '';
         htmlString += '<div  class="ajsrConfirm-back-bg" style="background-color: black; height: 100%; left: 0; opacity: 0.6; position: absolute; top: 0; width: 100%; z-index: 10000;"></div>';
-
-        var timestamp = Date.now();
         htmlString +=   '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" style="background-color: red; display: block; position: absolute; z-index: 10001; ">' +
-                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'CANCEL\')">Cancel</button>' +
-                          '<button class="ajsrConfirm-btn" type="button" onclick="$.ajsrConfirm(\'OK\')">OK</button>' +
+                            '<div>'+ parameters.title +'</div>' +
+                            '<div>'+ parameters.message +'</div>' +
+                            '<button class="ajsrConfirm-btn cancel" type="button">'+ parameters.cancelButton +'</button>' +
+                            '<button class="ajsrConfirm-btn confirm" type="button">'+ parameters.okButton +'</button>' +
                         '</div>';
 
-        if ( $(".ajsrConfirm").length === 0 ){ // TODO: Check out this ASAP!
-
-            console.log("////////////////// brushEditor! create!");
-
+        if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
             var link = $("body");
             link.append(htmlString);
-
-            //blackBoard.init(); // This is awful! The number of binded events increase every time we create/open this component.
-            //mirror.init();
-            //circle.init();      
+            link.find(".confirm").click(function () { confirm(); });
+            link.find(".cancel").click(function () { cancel(); });    
+        } else {
+            // Sorry, No more than one!
         }
 
-        /*
-        var componentOptions = _.extend(JSON.parse(JSON.stringify(configuration)), options || {});
-
-        var ComponentView = Backbone.View.extend({
-            events: {
-                'click #btnAccept': 'onAcept',
-                'click #btnCancel': 'onCancel'
-            },
-            initialize: function() {
-                this.render();
-            },
+/*
             render: function() {
 
                 $(this.$el).append('<div id="dlgContainer"></div>');
@@ -76,69 +76,31 @@
                 dlg.css({ 'left': positionX });
                 dlg.css({ 'top': positionY });
             },
-            destroyComponent: function() {
-                this.remove();
-            },
-            onAcept: function() {
-                fnOnAcept();
-                this.destroyComponent();
-            },
-            onCancel: function() {
-                fnOnCancel();
-                this.destroyComponent();
-            }
-        });
-
-        var fnOnAcept;
-        if (componentOptions.onAcept !== null) {
-            fnOnAcept = componentOptions.onAcept;
-        }
-
-        var fnOnCancel;
-        if (componentOptions.onCancel !== null) {
-            fnOnCancel = componentOptions.onCancel;
-        }
-
-        var view = new ComponentView({
-            el: $(document.body)
-        });
-
-    };
 */
 
+        function cancel(){
+            console.log("btn cancel!");
 
-        if (options === "OK") { // TODO: This is awful! The number of binded events increase every time we close the window.
-
-            console.log("... OK!");
-            btnOK();
-        }
-
-        if (options === "CANCEL") { // TODO: This is awful! The number of binded events increase every time we close the window.
-
-            console.log("... CANCEL!");
-            //close(); 
-            btnCancel()
-            
-        }
-
-        function btnCancel(){
-            console.log("////////////////// ajsrConfirm! btnCancel!");
-            defaults.beforeClose();
+            parameters.onCancel();
+            parameters.beforeClose();
             destroy();
         }
 
-        function btnOK(){
-            console.log("////////////////// ajsrConfirm! btnOK!");
-            defaults.beforeClose();
+        function confirm(){
+            console.log("btn confirm!");
+
+            parameters.onConfirm();
+            parameters.beforeClose();
             destroy();
         }
 
         function destroy(){
-            $(".ajsrConfirm-back-bg").remove();
-            //$(blackBoard.cvObj).off();
-            $(".ajsrConfirm").remove();  
 
-            defaults.whenDestroyed();   
+            console.log("destroy!");
+
+            $(".ajsrConfirm-back-bg").remove();
+            $(".ajsrConfirm").remove();  
+            parameters.whenDestroyed();   
 
             // unbind events       
         }
