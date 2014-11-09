@@ -20,6 +20,9 @@
 
         //'use strict';
 
+        var _WIDTH = 340, _HEIGHT = 130;
+
+
         var defaults = {
             title: 'ajsrConfirm 1.0 - Andres J. Soria R. 2014',
             message: 'Do you really want to do that?',
@@ -32,16 +35,26 @@
             whenDestroyed: function(){ console.log("whenDestroyed: do nothing by default"); }
         },
 
-            parameters = $.extend(defaults, options),
-            timestamp = Date.now(),
-            htmlString = '';
+        parameters = $.extend(defaults, options),
+        timestamp = Date.now(),
+        htmlString = '';
 
         htmlString += '<div  class="ajsrConfirm-back-bg" style="background-color: black; height: 100%; left: 0; opacity: 0.6; position: absolute; top: 0; width: 100%; z-index: 10000;"></div>';
-        htmlString +=   '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" style="background-color: red; display: block; position: absolute; z-index: 10001; ">' +
-                            '<div>'+ parameters.title +'</div>' +
-                            '<div>'+ parameters.message +'</div>' +
-                            '<button class="ajsrConfirm-btn cancel" type="button">'+ parameters.cancelButton +'</button>' +
-                            '<button class="ajsrConfirm-btn confirm" type="button">'+ parameters.okButton +'</button>' +
+        htmlString += '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" style="'+
+                            'background-color: red; '+
+                            'display: block; '+
+                            'position: absolute; '+
+                            'z-index: 10001; '+
+                            'width: '+ _WIDTH +'px; '+
+                            'height: '+ _HEIGHT +'px; '+
+                            'left: calc(50% - '+ _WIDTH/2 +'px); '+
+                            'top: calc(50% - '+ _HEIGHT/2 +'px); '+
+                            ' ">' +
+                            
+                            '<div>'+ parameters.title +'</div>'+
+                            '<div>'+ parameters.message +'</div>'+
+                            '<button class="ajsrConfirm-btn cancel" type="button">'+ parameters.cancelButton +'</button>'+
+                            '<button class="ajsrConfirm-btn confirm" type="button">'+ parameters.okButton +'</button>'+
                         '</div>';
 
         if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
