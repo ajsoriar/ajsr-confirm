@@ -1,83 +1,33 @@
 /* css */
+.ajsrConfirm-back-bg {
+  background-color: orange !important; }
 
-/* modal Dialog box */
-.msgMask {
-    background-color: black;
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 3000;
-}
+.ajsrConfirm {
+  background-color: #fafafa !important;
+  border-radius: 7px;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.5);
+  padding: 10px; }
+  .ajsrConfirm .title {
+    background-color: cyan;
+    padding: 7px; }
+  .ajsrConfirm .content {
+    background-color: blue;
+    padding: 7px; }
+  .ajsrConfirm .footer {
+    background-color: yellow; }
+  .ajsrConfirm .btn {
+    margin: 7px; }
+    .ajsrConfirm .btn.cancel {
+      background-color: red;
+      padding: 7px; }
+      .ajsrConfirm .btn.cancel:hover {
+        background-color: black;
+        color: white; }
+    .ajsrConfirm .btn.confirm {
+      background-color: green;
+      padding: 7px; }
+      .ajsrConfirm .btn.confirm:hover {
+        background-color: black;
+        color: white; }
 
-.dialog {
-    background-color: white;
-    border: 0px;
-    border-radius: 7px 7px 7px 7px;
-    display: block;
-    height: 200px;
-    left: 0;
-    margin: 0 auto;
-    opacity: 1;
-    position: relative;
-    top: 0;
-    width: 400px;
-    z-index: 3001;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
-}
-
-.dlgBarText{
-    background: -moz-linear-gradient(center top , #FDFDFD, #EAEAEA) repeat scroll 0 0 / 100% auto #EAEAEA;
-    border-bottom: 1px solid #CDCDCD;
-    color: #636363;
-    font-weight: 600;
-    line-height: 12px;
-    padding: 10px;
-    text-shadow: 0 1px #FFFFFF;
-    
-    border-radius: 7px 7px 0 0;
-}
-
-.dlgText{
-    background-color: white;
-    color: #555555;
-    display: block;
-    padding-right: 7px;
-    padding-top: 6px;
-}
-
-.dlgText:before{
-    background-color: #EEEEEE;
-    content: "";
-    display: block;
-    float: left;
-    font-family: FontAwesome;
-    font-size: 0;
-    height: 50px;
-    margin: 0 5px;
-    position: relative;
-    top: 0;
-    width: 50px;
-}
-
-.dlgControls{
-    background: -moz-linear-gradient(center top , #FDFDFD, #EAEAEA) repeat scroll 0 0 / 100% auto #EAEAEA;
-    border-top: 1px solid #CCCCCC;
-    bottom: 0;
-    padding: 0;
-    position: absolute;
-    text-align: right;
-    width: 100%;
-    border-radius: 0 0 7px 7px;
-}
-
-.dlgControls .btn{
-  margin:10px;
-}
-
-.dlgControls .btnCancel{
-  margin-right:0px;
-}
+/*# sourceMappingURL=ajsrConfirm.css.map */
