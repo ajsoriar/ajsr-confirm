@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>demo</title>
+        <!-- <link rel="stylesheet" href="../dist/ajsrConfirm.css"> -->
+    </head>
+
+    <body>
+
+        <h1> Complete functionality example.</h1>
+        
+        <input type="button" onclick="confirmation()" value="Destroy All!">
+
+<script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+
+        <script src="../dist/ajsrConfirm.js"></script>
+        <script language="javascript">
+        	
+        function confirmation () {
+
+        	$.ajsrConfirm({
+
+                text: "Yes or no?",
+                confirmButton: "OK",
+                cancelButton : "Cancel",
+                template: "default",
+                onConfirm: function() {
+
+                    console.log("Confirm!");
+                },
+                onCancel: function() {
+
+                    console.log("Cancel");
+                }
+
+            });
+
+        }
+
+        </script>
+
+    </body>
+
+</html>

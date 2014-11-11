@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>demo</title>
+        <!-- <link rel="stylesheet" href="../src/ajsrConfirm.css"> -->
+
+        <link rel="stylesheet" href="../src/css/tmplt-default.css">
+        <link rel="stylesheet" href="../src/css/tmplt-prince-of-persia.css">
+        <link rel="stylesheet" href="../src/css/tmplt-old-macintosh.scss">
+        <link rel="stylesheet" href="../src/css/tmplt-tron-1982.scss">
+
+    </head>
+
+    <body>
+
+        <h1> Templates functionality example.</h1>
+        
+        <input type="button" onclick="confirmation()" value="None (default)">
+        <input type="button" onclick="confirmation('old-macintosh')" value="68k Macintosh!">
+        <input type="button" onclick="confirmation('prince-of-persia')" value="Prince of Persia!">
+        <input type="button" onclick="confirmation('tron-1982')" value="Tron 1982!">
+
+<script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+
+        <script src="../src/ajsrConfirm.js"></script>
+        <script language="javascript">
+        	
+        function confirmation ( templateName ) {
+
+        	$.ajsrConfirm({
+
+                text: "Yes or no?",
+                confirmButton: "OK",
+                cancelButton : "Cancel",
+                template: templateName,
+                onConfirm: function() {
+
+                    console.log("Confirm!");
+                },
+                onCancel: function() {
+
+                    console.log("Cancel");
+                }
+
+            });
+
+        }
+
+        </script>
+
+    </body>
+
+</html>
