@@ -1,15 +1,16 @@
 /* css */
 
 .ajsrConfirm-back-bg{
-    background-color: orange !important;
+    background-color: orange; // !important;
 }
 
 .ajsrConfirm{
 
-    background-color: #fafafa !important;
+    background-color: #fafafa;// !important;
     border-radius: 7px;
     box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.5);
     padding: 10px;
+
 
     .title{
         background-color: cyan;
@@ -26,7 +27,7 @@
     }
 
     .btn {
-        
+
         margin: 7px;
         
         &.cancel{

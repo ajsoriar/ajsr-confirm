@@ -1,7 +1,11 @@
-// ========================================================================
-// ajsr confirm v0.0.1
-// https://github.com/ajsoriar/confirmBox
-// ========================================================================
+/**
+ * ajsr-confirm
+ * jQuery confirm dialog box including several fun css templates.
+ * @version v0.0.1 - 2015-09-07
+ * @link https://github.com/ajsoriar/ajsr-confirm
+ * @author Andres J. Soria R. <ajsoriar@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
 
 (function($) {
 
@@ -20,7 +24,7 @@
         whenDestroyed: function(){}
     };
     */
-
+  
     $.ajsrConfirm = function(options, e) {
 
         'use strict';
@@ -33,44 +37,68 @@
                 message: 'Do you really want to do that?',
                 okButton: 'OK',
                 cancelButton: 'Cancel',
-                //css: '', // custom class
+                template: '',
+                showCancel: true,
+                css: '', // extra custom class at the end
+                style: '', // extra custom style at the end
+                bgStyle: '',
+                nineCorners: false,
                 onConfirm: function(){ console.log("onConfirm: do nothing by default"); },
                 onCancel: function(){ console.log("onCancel: do nothing by default"); },
                 beforeOpen: function(){ console.log("beforeOpen: do nothing by default"); },
                 beforeClose: function(){ console.log("beforeClose: do nothing by default"); },
                 whenDestroyed: function(){ console.log("whenDestroyed: do nothing by default"); }
             },
-            parameters = $.extend(defaults, options),
-            timestamp = Date.now(),
-            htmlString = '';
+            params = $.extend(defaults, options),
+            _timestamp = Date.now(),
+            htmlString = '',
+            _bg_layer_style = '',
+            _modal_style = '';
 
         // template
 
-        htmlString +=   '<div  class="ajsrConfirm-back-bg " style="background-color: black; height: 100%; left: 0; opacity: 0.2; position: absolute; top: 0; width: 100%; z-index: 10000;"></div>';
-        htmlString +=   '<div id="ajsrConfirm-'+ timestamp +'" class="ajsrConfirm" style="'+
-                            'background-color: red; '+
-                            'display: block; '+
-                            'position: absolute; '+
-                            'z-index: 10001; '+
-                            'width: '+ _WIDTH +'px; '+
-                            //'height: '+ _HEIGHT +'px; '+
-                            'left: calc(50% - '+ _WIDTH/2 +'px); '+
-                            'top: calc(50% - '+ _HEIGHT/2 +'px); '+
-                            'opacity: 1'+
-                            ' ">' +
-                            
-                            '<div class="title">'+ parameters.title +'</div>'+
-                            '<div class="content">'+ parameters.message +'</div>'+
-                            '<div class="footer">'+
-                                '<button class="btn cancel" type="button">'+ parameters.cancelButton +'</button>'+
-                                '<button class="btn confirm" type="button">'+ parameters.okButton +'</button>'+
+        if ( params.template === '' ){
+
+            _modal_style = ''+
+                'background-color: red; '+
+                'display: block; '+
+                'position: absolute; '+
+                'z-index: 10001; '+
+                'width: '+ _WIDTH +'px; '+
+                //'height: '+ _HEIGHT +'px; '+
+                'left: calc(50% - '+ _WIDTH/2 +'px); '+
+                'top: calc(50% - '+ _HEIGHT/2 +'px); '+
+                'opacity: 1;';
+
+        } else {
+
+            _modal_style = 'position: absolute; z-index: 10001; '+ params.template;
+
+        }
+
+        _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+
+        htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
+        htmlString +=   '<div id="ajsrConfirm-'+ _timestamp +'" class="ajsrConfirm '+ params.template +' '+ params.css +'" style="'+ _modal_style +' '+ params.style +' " >'+
+                    
+                            '<div class="title">'+ params.title +'</div>'+
+                            '<div class="content">'+ params.message +'</div>'+
+                            '<div class="footer">';
+
+                                if( params.showCancel ) htmlString += '<button class="btn cancel" type="button">'+ params.cancelButton +'</button>';
+
+        htmlString += ''+
+                                '<button class="btn confirm" type="button">'+ params.okButton +'</button>'+
                             '</div>'+
+
                         '</div>';
 
         // functionality
 
 
         if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
+
+            // ... create one!
 
             componentObj = $("body").append(htmlString);
             
@@ -97,16 +125,16 @@
         function cancel(){
             console.log("btn cancel!");
 
-            parameters.onCancel();
-            parameters.beforeClose();
+            params.onCancel();
+            params.beforeClose();
             destroy();
         }
 
         function confirm(){
             console.log("btn confirm!");
 
-            parameters.onConfirm();
-            parameters.beforeClose();
+            params.onConfirm();
+            params.beforeClose();
             destroy();
         }
 
@@ -114,12 +142,12 @@
 
             console.log("destroy!");
 
-            parameters.beforeClose();  
+            params.beforeClose();  
             
             //componentObj.fadeOut(200, {
                 $(".ajsrConfirm-back-bg").remove();
                 $(".ajsrConfirm").remove();  
-                parameters.whenDestroyed();                   
+                params.whenDestroyed();                   
             //})
             
 
