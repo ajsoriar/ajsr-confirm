@@ -6,9 +6,10 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: [
-                    'src/*.*'
+                    'src/*.js',
+                    'src/sass/*.scss'
                 ],
-                tasks: ['test'],
+                tasks: ['sass'], //,'test'],
                 options: {
                     livereload: 9090,
                 }
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
         },
         clean: {
             build: {
-                src: ['dist/*']
+                src: ['dist/*.*']
             }
         },
         copy: {
@@ -24,7 +25,8 @@ module.exports = function(grunt) {
                 files: [{
                     cwd: 'src',
                     src: [
-                        '**',
+                        '*.js',
+                        '*.css'
                     ],
                     dest: 'dist',
                     expand: true
@@ -45,6 +47,43 @@ module.exports = function(grunt) {
                 }
             }
         },
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'dist',
+                    ext: '.min.css'
+                }]
+            }
+        },
+        sass: { // Task
+            dist: { // Target
+                options: { // Target options
+                    style: 'expanded'
+                }
+                /*
+                ,
+                files: { // Dictionary of files
+                    //'src/ajsrConfirm.css': 'src/sass/ajsrConfirm.scss'
+                }
+                */
+
+
+            }
+        },
+        compass: {
+            dist: {
+                config: {
+                    config: 'src/compass/config.rb'
+                },
+                options: {
+                    sassDir: 'src/compass/sass',
+                    cssDir: 'src/css'
+                }
+            }
+        },
         karma: {
             unit: {
                 configFile: 'tests/karma.conf.js',
@@ -59,10 +98,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+    // Define tasks
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('dev', ['watch']);
-    grunt.registerTask('build', ['clean', 'copy', 'uglify']);
+    //grunt.registerTask('build', ['sass','clean', 'copy', 'uglify']);
+    grunt.registerTask('build', ['compass', 'copy', 'uglify', 'cssmin']);
     grunt.registerTask('test', ['karma']);
+    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('clean', ['clean']);
 
 };
