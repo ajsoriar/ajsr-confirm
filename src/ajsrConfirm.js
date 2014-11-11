@@ -60,7 +60,7 @@
         if ( params.template === '' ){
 
             _modal_style = ''+
-                'background-color: red; '+
+                //'background-color: red; '+
                 'display: block; '+
                 'position: absolute; '+
                 'z-index: 10001; '+
@@ -69,14 +69,16 @@
                 'left: calc(50% - '+ _WIDTH/2 +'px); '+
                 'top: calc(50% - '+ _HEIGHT/2 +'px); '+
                 'opacity: 1;';
-
+            
+            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+        
         } else {
 
             _modal_style = 'position: absolute; z-index: 10001; '+ params.template;
 
-        }
+            //_bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;"+ ;
 
-        _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+        }
 
         htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
         htmlString +=   '<div id="ajsrConfirm-'+ _timestamp +'" class="ajsrConfirm '+ params.template +' '+ params.css +'" style="'+ _modal_style +' '+ params.style +' " >'+
