@@ -19,7 +19,7 @@
         
         <input type="button" onclick="confirmation()" value="None (default)">
         <input type="button" onclick="confirmation('old-macintosh')" value="68k Macintosh!">
-        <input type="button" onclick="confirmation('prince-of-persia')" value="Prince of Persia!">
+        <input type="button" onclick="confirmation('prince-of-persia', true )" value="Prince of Persia!">
         <input type="button" onclick="confirmation('tron-1982')" value="Tron 1982!">
 
 <script
@@ -30,7 +30,7 @@
         <script src="../src/ajsrConfirm.js"></script>
         <script language="javascript">
         	
-        function confirmation ( templateName ) {
+        function confirmation ( templateName, nineCorners ) {
 
         	$.ajsrConfirm({
 
@@ -38,6 +38,7 @@
                 confirmButton: "OK",
                 cancelButton : "Cancel",
                 template: templateName,
+                nineCorners: nineCorners,
                 onConfirm: function() {
 
                     console.log("Confirm!");

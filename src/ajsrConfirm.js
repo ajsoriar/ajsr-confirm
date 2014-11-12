@@ -33,7 +33,7 @@
 
         var _WIDTH = 340, _HEIGHT = 130, componentObj,
             defaults = {
-                title: 'ajsrConfirm 1.0 - Andres J. Soria R. 2014',
+                title: 'Attention!',
                 message: 'Do you really want to do that?',
                 okButton: 'OK',
                 cancelButton: 'Cancel',
@@ -70,21 +70,38 @@
                 'top: calc(50% - '+ _HEIGHT/2 +'px); '+
                 'opacity: 1;';
             
-            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; width: 100%; z-index: 10000;";
+
+            // position: fixed;
         
         } else {
 
-            _modal_style = 'position: absolute; z-index: 10001; '+ params.template;
+            _modal_style = 'position: fixed; z-index: 10001; '+ params.template;
 
-            //_bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;"+ ;
+            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
 
         }
 
         htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
-        htmlString +=   '<div id="ajsrConfirm-'+ _timestamp +'" class="ajsrConfirm '+ params.template +' '+ params.css +'" style="'+ _modal_style +' '+ params.style +' " >'+
+        htmlString +=   '<div id="ajsrConfirm-'+ _timestamp +'" class="ajsrConfirm '+ params.template +' '+ params.css +'" style="'+ _modal_style +' '+ params.style +' " >';
+
+            if( params.nineCorners ) { 
+
+                        htmlString += ''+
+                        '<div class="extra layer-1 top left"></div>' + 
+                        '<div class="extra layer-2 top center"></div>' + 
+                        '<div class="extra layer-3 top right"></div>' + 
+                        '<div class="extra layer-4 middle left"></div>' + 
+                        '<div class="extra layer-5 middle center"></div>' + 
+                        '<div class="extra layer-6 middle right"></div>' + 
+                        '<div class="extra layer-7 bottom left"></div>' + 
+                        '<div class="extra layer-8 bottom center"></div>' + 
+                        '<div class="extra layer-9 bottom right"></div>'; 
+
+                                }
                     
-                            '<div class="title">'+ params.title +'</div>'+
-                            '<div class="content">'+ params.message +'</div>'+
+        htmlString +=   '<div class="title">'+ params.title +'</div>'+
+                            '<div class="content"><p>'+ params.message +'</p></div>'+
                             '<div class="footer">';
 
                                 if( params.showCancel ) htmlString += '<button class="btn cancel" type="button">'+ params.cancelButton +'</button>';
