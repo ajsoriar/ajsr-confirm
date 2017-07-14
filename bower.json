@@ -1,0 +1,32 @@
+{
+  "name": "ajsr-confirm",
+  "version": "0.0.2",
+  "homepage": "https://github.com/ajsoriar/ajsr-confirm.git",
+  "authors": [
+    "Andres J. Soria R. <ajsoriar@gmail.com>"
+  ],
+  "description": "jQuery confirm dialog box including several fun css templates.",
+  "main": "dist/ajsrConfirm.min.js",
+  "moduleType": [],
+  "keywords": [
+    "jQuery-confirm",
+    "ajsr-confirm",
+    "js-confirm",
+    "confirmation-box",
+    "confirm",
+    "jsconfirm",
+    "jqconfirm",
+    "confirmjs"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ]
+}
