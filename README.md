@@ -32,7 +32,9 @@ You will get this:
 <link rel="stylesheet" type="text/css" href="dist/ajsr-confirm.css">
 ```
 
-#### 3 Use it this way:
+#### 3 Use it!
+
+3.1 This way:
 
 ```javascript
 $.ajsrConfirm({
@@ -42,6 +44,30 @@ $.ajsrConfirm({
 
 You will get this:
 ![angular-avatar basic usage example](./demo/ajsr-confirm-basic-example.png?raw=true "angular-avatar basic usage example")
+
+3.1 More interesting example including a template and some events:
+
+```javascript
+$.ajsrConfirm({
+
+    text: "Do yow want to do that?",
+    confirmButton: "OK",
+    cancelButton : "Cancel",
+    template: templateName,
+    nineCorners: nineCorners,
+    onConfirm: function() {
+
+        console.log("Confirm!");
+    },
+    onCancel: function() {
+
+        console.log("Cancel!");
+    }
+
+});
+```
+
+3.2 Complete examples in `ajsrConfirm/demo` directory
 
 #### 4 License
 
