@@ -3,15 +3,15 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>demo</title>
-        <!-- <link rel="stylesheet" href="../dist/ajsrConfirm.css"> -->
+        <title>ajsrConfirm - Complete functionality example</title>
+        <link rel="stylesheet" href="../dist/css/tmplt-default.css">
     </head>
 
     <body>
 
-        <h1> Complete functionality example.</h1>
+        <h1>Complete functionality example.</h1>
         
-        <input type="button" onclick="confirmation()" value="Destroy All!">
+        <input type="button" onclick="confirmation()" value="Show confirmation window!">
 
 <script
 			  src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -21,11 +21,11 @@
         <script src="../dist/ajsrConfirm.js"></script>
         <script language="javascript">
         	
-        function confirmation () {
+        function confirmation ( myText ) {
 
         	$.ajsrConfirm({
 
-                text: "Yes or no?",
+                message: myText || "Sure?",
                 confirmButton: "OK",
                 cancelButton : "Cancel",
                 template: "default",
@@ -41,6 +41,10 @@
             });
 
         }
+
+        confirmation();
+        confirmation("Hello!");
+        confirmation("Error in the console!");
 
         </script>
 

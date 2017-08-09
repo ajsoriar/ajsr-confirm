@@ -3,14 +3,13 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>demo</title>
-        <!-- <link rel="stylesheet" href="../src/ajsrConfirm.css"> -->
-
-        <link rel="stylesheet" href="../src/css/tmplt-default.css">
-        <link rel="stylesheet" href="../src/css/tmplt-prince-of-persia.css">
-        <!-- <link rel="stylesheet" href="../src/css/tmplt-old-macintosh.css"> -->
-        <link rel="stylesheet" href="../src/css/tmplt-synthwave-1.css">
-        <link rel="stylesheet" href="../src/css/tmplt-future-blue.css">
+        <title>ajsrConfirm - Templates example</title>
+        
+        <link rel="stylesheet" href="../dist/ajsrConfirm.css">
+        <link rel="stylesheet" href="../dist/css/tmplt-default.css">
+        <link rel="stylesheet" href="../dist/css/tmplt-prince-of-persia.css">
+        <link rel="stylesheet" href="../dist/css/tmplt-synthwave-1.css">
+        <link rel="stylesheet" href="../dist/css/tmplt-future-blue.css">
 
     </head>
 
@@ -19,28 +18,27 @@
         <h1> Templates functionality example.</h1>
         
         <input type="button" onclick="confirmation()" value="None (default)">
+        <input type="button" onclick="confirmation('prince-of-persia', true )" value="Prince of Persia!">
+        <input type="button" onclick="confirmation('synthwave-1',false)" value="Synthwave!">
+        <input type="button" onclick="confirmation('future-blue',false)" value="Future Blue">
         <!--
         <input type="button" onclick="confirmation('old-macintosh')" value="68k Macintosh">
         <input type="button" onclick="confirmation('windows-95')" value="Windows 95">
         <input type="button" onclick="confirmation('windows XP')" value="Windows XP">
         -->
-        <input type="button" onclick="confirmation('prince-of-persia', true )" value="Prince of Persia!">
-        <input type="button" onclick="confirmation('synthwave-1',false)" value="Synthwave!">
-        <input type="button" onclick="confirmation('future-blue',false)" value="Future Blue">
 
         <script
 			  src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
 
-        <script src="../src/ajsrConfirm.js"></script>
+        <script src="../dist/ajsrConfirm.js"></script>
         <script language="javascript">
         	
         function confirmation ( templateName, nineCorners ) {
 
         	$.ajsrConfirm({
 
-                text: "Yes or no?",
                 confirmButton: "OK",
                 cancelButton : "Cancel",
                 template: templateName,
