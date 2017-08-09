@@ -1,7 +1,7 @@
 /**
  * ajsr-confirm
  * jQuery confirm dialog box including several fun css templates.
- * @version v0.0.1 - 2015-09-07
+ * @version v0.0.2 - 2017-8-09
  * @link https://github.com/ajsoriar/ajsr-confirm
  * @author Andres J. Soria R. <ajsoriar@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -19,7 +19,7 @@
         cancelButton: 'Cancel',
         onConfirm: function(){},
         onCancel: function(){},
-        beforeOpen: function(){},
+        beforeShow: function(){},
         beforeClose: function(){},
         whenDestroyed: function(){}
     };
@@ -43,11 +43,12 @@
                 style: '', // extra custom style at the end
                 bgStyle: '',
                 nineCorners: false,
-                onConfirm: function(){ console.log("onConfirm: do nothing by default"); },
-                onCancel: function(){ console.log("onCancel: do nothing by default"); },
-                beforeOpen: function(){ console.log("beforeOpen: do nothing by default"); },
-                beforeClose: function(){ console.log("beforeClose: do nothing by default"); },
-                whenDestroyed: function(){ console.log("whenDestroyed: do nothing by default"); }
+                onConfirm: function(){ console.log("onConfirm(): do nothing by default"); },
+                onCancel: function(){ console.log("onCancel(): do nothing by default"); },
+                beforeShow: function(){ console.log("beforeShow(): do nothing by default"); },
+                afterShow: function(){ console.log("afterShow(): do nothing by default"); },
+                beforeClose: function(){ console.log("beforeClose(): do nothing by default"); },
+                whenDestroyed: function(){ console.log("whenDestroyed(): do nothing by default"); }
             },
             params = $.extend(defaults, options),
             _timestamp = Date.now(),
@@ -57,7 +58,7 @@
 
         // template
 
-        if ( params.template === '' ){
+        if ( params.template === undefined || params.template === '' || params.template === null || params.template === 'default' ){
 
             _modal_style = ''+
                 //'background-color: red; '+
@@ -77,38 +78,36 @@
         } else {
 
             _modal_style = 'position: fixed; z-index: 10001; '+ params.template;
-
             _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
-
         }
 
         htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
         htmlString +=   '<div id="ajsrConfirm-'+ _timestamp +'" class="ajsrConfirm '+ params.template +' '+ params.css +'" style="'+ _modal_style +' '+ params.style +' " >';
 
-            if( params.nineCorners ) { 
+        if( params.nineCorners ) { 
 
-                        htmlString += ''+
-                        '<div class="extra layer-1 top left"></div>' + 
-                        '<div class="extra layer-2 top center"></div>' + 
-                        '<div class="extra layer-3 top right"></div>' + 
-                        '<div class="extra layer-4 middle left"></div>' + 
-                        '<div class="extra layer-5 middle center"></div>' + 
-                        '<div class="extra layer-6 middle right"></div>' + 
-                        '<div class="extra layer-7 bottom left"></div>' + 
-                        '<div class="extra layer-8 bottom center"></div>' + 
-                        '<div class="extra layer-9 bottom right"></div>'; 
+                    htmlString += ''+
+                    '<div class="extra layer-1 top left"></div>' + 
+                    '<div class="extra layer-2 top center"></div>' + 
+                    '<div class="extra layer-3 top right"></div>' + 
+                    '<div class="extra layer-4 middle left"></div>' + 
+                    '<div class="extra layer-5 middle center"></div>' + 
+                    '<div class="extra layer-6 middle right"></div>' + 
+                    '<div class="extra layer-7 bottom left"></div>' + 
+                    '<div class="extra layer-8 bottom center"></div>' + 
+                    '<div class="extra layer-9 bottom right"></div>'; 
 
-                                }
+        }
                     
         htmlString +=   '<div class="title">'+ params.title +'</div>'+
-                            '<div class="content"><p>'+ params.message +'</p></div>'+
-                            '<div class="footer">';
+                        '<div class="content"><p>'+ params.message +'</p></div>'+
+                        '<div class="footer">';
 
-                                if( params.showCancel ) htmlString += '<button class="btn cancel" type="button">'+ params.cancelButton +'</button>';
+                        if( params.showCancel ) htmlString += '<button class="btn cancel" type="button">'+ params.cancelButton +'</button>';
 
-        htmlString += ''+
-                                '<button class="btn confirm" type="button">'+ params.okButton +'</button>'+
-                            '</div>'+
+        htmlString +=   ''+
+                        '<button class="btn confirm" type="button">'+ params.okButton +'</button>'+
+                        '</div>'+
 
                         '</div>';
 
@@ -116,6 +115,8 @@
 
 
         if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
+
+            params.beforeShow();
 
             // ... create one!
 
@@ -137,8 +138,11 @@
 
             //$(".ajsrConfirm").fadeIn(); //'fast', function(){ });
 
+            params.afterShow();
+
         } else {
             // Sorry, No more than one!
+            console.error("Sorry, No more than one!");
         }
 
         function cancel(){
@@ -160,9 +164,7 @@
         function destroy(){
 
             console.log("destroy!");
-
-            params.beforeClose();  
-            
+             
             //componentObj.fadeOut(200, {
                 $(".ajsrConfirm-back-bg").remove();
                 $(".ajsrConfirm").remove();  

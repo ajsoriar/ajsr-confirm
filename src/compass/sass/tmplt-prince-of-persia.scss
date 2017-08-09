@@ -13,6 +13,7 @@
 $width: 400px;
 $height: 200px;
 .ajsrConfirm {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     &.prince-of-persia {
         background-color: #941100;
         border-radius: 0;
@@ -117,16 +118,29 @@ $height: 200px;
             border-bottom: 1px solid #e7ae00;
         }
         .btn {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+
             padding: 4px 10px;
             border-radius: 0;
             margin-top: 7px;
+
             &.cancel {
                 background-color: #0a74a1;
                 //box-shadow: 0 0 0px 4px #ff0101;
                 border: 2px solid white;
                 margin-left: 15px;
                 text-shadow: 0 1px 0 black;
-                color: white;
+                //color: white;
+
+                border: 2px solid white;
+                margin-left: 15px;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.59);
+                color: #070017;
+                background-color: #92bad4;
+
                 // Needs latest Compass, add '@import "compass"' to your scss
                 // Permalink - use to edit and share this gradient:
                 // http://colorzilla.com/gradient-editor/#b8e1fc+0,a9d2f3+10,90bae4+25,90bcea+37,90bff0+50,6ba8e5+51,a2daf5+83,bdf3fd+100;Blue+Gloss+%231
@@ -145,7 +159,7 @@ $height: 200px;
                 #bdf3fd 100%));
                 &:hover {
                     background-color: black;
-                    color: white;
+                    //color: white;
                 }
             }
             &.confirm {
@@ -154,6 +168,12 @@ $height: 200px;
                 border: 2px solid white;
                 margin-left: 15px;
                 text-shadow: 0 1px 0 black;
+
+                border: 2px solid white;
+                margin-left: 15px;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.59);
+                color: #070017;
+
                 // Needs latest Compass, add '@import "compass"' to your scss
                 // Permalink - use to edit and share this gradient:
                 // http://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss
@@ -168,7 +188,7 @@ $height: 200px;
                 #9ecb2d 100%));
                 &:hover {
                     background-color: black;
-                    color: white;
+                    //color: white;
                 }
             }
         }

@@ -1,5 +1,7 @@
 /* css */
 
+button:focus {outline:0;} // remove chrome border on focus
+
 .ajsrConfirm-back-bg {
     background-color: orange; // !important;
 }
@@ -30,8 +32,8 @@
         font-weight: 500;
     }
     .content {
-padding: 9px 14px;
-background-color: white;
+        padding: 9px 14px;
+        background-color: white;
     }
     .footer {
         padding: 15px;

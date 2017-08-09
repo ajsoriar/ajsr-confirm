@@ -30,7 +30,17 @@ module.exports = function(grunt) {
                     ],
                     dest: 'dist',
                     expand: true
-                }]
+                }
+                // ,{
+                //     cwd: 'src/images',
+                //     src: [
+                //         '*.js',
+                //         '*.css'
+                //     ],
+                //     dest: 'dist/templates/',
+                //     expand: true  
+                // }
+                ]
             }
         },
         uglify: {
@@ -104,6 +114,8 @@ module.exports = function(grunt) {
     // Define tasks
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('dev', ['watch']);
+
+    grunt.registerTask('compass', ['compass']);
     //grunt.registerTask('build', ['sass','clean', 'copy', 'uglify']);
     grunt.registerTask('build', ['compass', 'copy', 'uglify', 'cssmin']);
     grunt.registerTask('test', ['karma']);

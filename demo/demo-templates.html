@@ -8,8 +8,9 @@
 
         <link rel="stylesheet" href="../src/css/tmplt-default.css">
         <link rel="stylesheet" href="../src/css/tmplt-prince-of-persia.css">
-        <link rel="stylesheet" href="../src/css/tmplt-old-macintosh.scss">
-        <link rel="stylesheet" href="../src/css/tmplt-tron-1982.scss">
+        <!-- <link rel="stylesheet" href="../src/css/tmplt-old-macintosh.css"> -->
+        <link rel="stylesheet" href="../src/css/tmplt-synthwave-1.css">
+        <link rel="stylesheet" href="../src/css/tmplt-future-blue.css">
 
     </head>
 
@@ -18,11 +19,16 @@
         <h1> Templates functionality example.</h1>
         
         <input type="button" onclick="confirmation()" value="None (default)">
-        <input type="button" onclick="confirmation('old-macintosh')" value="68k Macintosh!">
+        <!--
+        <input type="button" onclick="confirmation('old-macintosh')" value="68k Macintosh">
+        <input type="button" onclick="confirmation('windows-95')" value="Windows 95">
+        <input type="button" onclick="confirmation('windows XP')" value="Windows XP">
+        -->
         <input type="button" onclick="confirmation('prince-of-persia', true )" value="Prince of Persia!">
-        <input type="button" onclick="confirmation('tron-1982')" value="Tron 1982!">
+        <input type="button" onclick="confirmation('synthwave-1',false)" value="Synthwave!">
+        <input type="button" onclick="confirmation('future-blue',false)" value="Future Blue">
 
-<script
+        <script
 			  src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
@@ -45,7 +51,7 @@
                 },
                 onCancel: function() {
 
-                    console.log("Cancel");
+                    console.log("Cancel!");
                 }
 
             });
