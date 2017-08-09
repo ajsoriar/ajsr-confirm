@@ -1,8 +1,11 @@
+
 'use strict';
 
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        /*
         watch: {
             scripts: {
                 files: [
@@ -15,9 +18,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        */
+
         clean: {
             build: {
-                src: ['dist/*.*']
+                src: ['dist/*.*','src/css/*.css']
             }
         },
         copy: {
@@ -25,10 +30,18 @@ module.exports = function(grunt) {
                 files: [{
                     cwd: 'src',
                     src: [
-                        '*.js',
-                        '*.css'
+                        '*.js' //,
+                        //'*.css'
                     ],
                     dest: 'dist',
+                    expand: true
+                },{
+                    cwd: 'src/css',
+                    src: [
+                        //'*.js',
+                        '*.css'
+                    ],
+                    dest: 'dist/css',
                     expand: true
                 }
                 // ,{
@@ -61,9 +74,9 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'dist',
+                    cwd: 'dist/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'dist',
+                    dest: 'dist/css',
                     ext: '.min.css'
                 }]
             }
@@ -93,33 +106,41 @@ module.exports = function(grunt) {
                     cssDir: 'src/css'
                 }
             }
-        },
+        }
+
+
+/*
+        ,
         karma: {
             unit: {
                 configFile: 'tests/karma.conf.js',
                 singleRun: true
             }
         }
+*/
     });
 
     // Include functionality
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    //grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-karma');
+    //grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Define tasks
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('dev', ['watch']);
-
-    grunt.registerTask('compass', ['compass']);
+    //grunt.registerTask('default', ['watch']);
+    //grunt.registerTask('dev', ['watch']);
+    //grunt.registerTask('compass', ['compass']);
     //grunt.registerTask('build', ['sass','clean', 'copy', 'uglify']);
-    grunt.registerTask('build', ['compass', 'copy', 'uglify', 'cssmin']);
-    grunt.registerTask('test', ['karma']);
-    grunt.registerTask('default', ['sass']);
-    grunt.registerTask('clean', ['clean']);
-
+    grunt.registerTask( 
+        'build',
+        'Compiles all of the assets and files to dist directory.',
+        ['clean', 'compass', 'copy', 'uglify', 'cssmin']
+    );
+    //grunt.registerTask('test', ['karma']);
+    //grunt.registerTask('default', ['sass']);
+    //grunt.registerTask('clean', ['clean']);
 };
