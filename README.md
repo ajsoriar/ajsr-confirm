@@ -9,20 +9,20 @@
 
 This is a simple plug in that shows a confirmation alert.
 
-You will get this:
+<!--- You will get this:-->
 ![angular-avatar basic usage example](./demo/all-in-one-example.gif?raw=true "angular-avatar basic usage example")
 
 ## Use it this way
 
 #### 1 Download and Install ajsr-confirm:
 <!--- - Bower: **bower install angular-avatar** -->
- - NPM: **npm install angular-avatar**
- - github: **https://github.com/ajsoriar/angular-avatar**
+ - NPM: **npm install ajsr-confirm**
+ - github: **https://github.com/ajsoriar/ajsr-confirm**
 <!--- - NuGet: **PM> Install-Package angular-avatar** -->
 
 #### 2 Include dependences:
 
-2.1 ajsr-confirm.min.js is under dist folder.
+2.1 ajsr-confirm.min.js is under `dist` folder.
 
 2.2 Initialize the plugin by referencing the necessary files:
 
@@ -45,7 +45,7 @@ $.ajsrConfirm({
 You will get this:
 ![angular-avatar basic usage example](./demo/ajsr-confirm-basic-example.png?raw=true "angular-avatar basic usage example")
 
-3.1 More interesting example including a template and some events:
+3.2 More interesting example including a template and some events:
 
 ```javascript
 $.ajsrConfirm({
@@ -66,8 +66,7 @@ $.ajsrConfirm({
 
 });
 ```
-
-3.2 Complete examples in `ajsrConfirm/demo` directory
+3.3 Complete examples in `ajsrConfirm/demo` directory and plunker:
 
 #### 4 License
 
