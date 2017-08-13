@@ -22,6 +22,7 @@ module.exports = function(config) {
         
             //'bower_components/angular/angular.min.js',
             //'bower_components/angular-mocks/angular-mocks.js',
+            'https://code.jquery.com/jquery-2.2.4.min.js',
 
             /* We are testing now using version 1.4.5 of angular.js and angular-mocks.js. Version 1.5.0 and 1.5.5 break tests due to some kind of $injector:modulerr? error: Failed to instantiate module ng */
 
