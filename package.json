@@ -1,6 +1,6 @@
 {
   "name": "ajsr-confirm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "jQuery confirm dialog box including several fun css templates",
   "main": "dist/ajsr-confirm.js",
   "directories": {
