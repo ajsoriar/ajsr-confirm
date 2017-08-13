@@ -15,10 +15,12 @@ ajsr-confirm is a simple jQuery plug in that shows a confirmation alert.
 ## Use it this way
 
 #### 1 Download and Install ajsr-confirm:
-<!--- - Bower: **bower install ajsr-confirm** -->
+
  - NPM: **npm install ajsr-confirm**
+ - Bower: **bower install ajsr-confirm**
  - github: **https://github.com/ajsoriar/ajsr-confirm**
 <!--- - NuGet: **PM> Install-Package ajsr-confirm** -->
+
 
 #### 2 Include dependences:
 
@@ -32,6 +34,7 @@ ajsr-confirm is a simple jQuery plug in that shows a confirmation alert.
 <link rel="stylesheet" type="text/css" href="dist/ajsr-confirm.css">
 ```
 
+
 #### 3 Use it!
 
 3.1 This way:
@@ -42,7 +45,7 @@ $.ajsrConfirm({
 });
 ```
 
-You will get this:
+You will get this: (bootstrap-like theme will be used by default)
 
 ![ajsr-confirm basic usage example](./demo/ajsr-confirm-basic-example.png?raw=true "ajsr-confirm basic usage example")
 
@@ -54,8 +57,7 @@ $.ajsrConfirm({
     text: "Do yow really want to do that?",
     confirmButton: "OK",
     cancelButton : "Cancel",
-    template: templateName,
-    nineCorners: nineCorners,
+    template: 'windows-98',
     onConfirm: function() {
 
         console.log("Confirm!");
@@ -71,7 +73,17 @@ $.ajsrConfirm({
 
 Live example in plunker: https://plnkr.co/EuKZt6
 
-#### 4 License
+
+#### 4 Themes:
+
+Default theme looks like bootstrap. By specifying the attribute `template` default theme can be changed.
+
+Available themes are: 'prince-of-persia', 'synthwave-1', 'future-blue', 'windows-98' and 'pill'
+
+Live example in plunker: https://plnkr.co/EuKZt6
+
+
+#### 5 License
 
 MIT
 
