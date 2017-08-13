@@ -1,7 +1,7 @@
 /**
  * ajsr-confirm
  * jQuery confirm dialog box including several fun css templates.
- * @version v0.0.3 - 2017-8-13
+ * @version v1.0.0 - 2017-8-13
  * @link https://github.com/ajsoriar/ajsr-confirm
  * @author Andres J. Soria R. <ajsoriar@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -11,20 +11,6 @@
 
     console.log("ajsrConfirm plug-in!");
 
-    /*
-    $.ajsrConfirm.defaults = {
-        title: 'ajsrConfirm 1.0 - Andres J. Soria R. 2014',
-        message: 'Do you really want to do that?',
-        okButton: 'OK',
-        cancelButton: 'Cancel',
-        onConfirm: function(){},
-        onCancel: function(){},
-        beforeShow: function(){},
-        beforeClose: function(){},
-        whenDestroyed: function(){}
-    };
-    */
-  
     $.ajsrConfirm = function(options, e) {
 
         'use strict';
