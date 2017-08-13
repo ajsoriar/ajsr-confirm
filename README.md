@@ -1,24 +1,24 @@
-# ajsr-confirm [![Build Status](https://travis-ci.org/ajsoriar/angular-avatar.svg?branch=master)](https://travis-ci.org/ajsoriar/ajsr-confirm)
+# ajsr-confirm [![Build Status](https://travis-ci.org/ajsoriar/ajsr-confirm.svg?branch=master)](https://travis-ci.org/ajsoriar/ajsr-confirm)
 
-[![npm version](https://badge.fury.io/js/angular-avatar.svg)](https://badge.fury.io/js/ajsr-confirm)
-[![Bower version](https://badge.fury.io/bo/angular-avatar.svg)](https://badge.fury.io/bo/ajsr-confirm)
+[![npm version](https://badge.fury.io/js/ajsr-confirm.svg)](https://badge.fury.io/js/ajsr-confirm)
+[![Bower version](https://badge.fury.io/bo/ajsr-confirm.svg)](https://badge.fury.io/bo/ajsr-confirm)
 <!---
-[![Bower version](https://badge.fury.io/bo/angular-avatar.svg)](https://badge.fury.io/bo/angular-avatar)
-[![NuGet version](https://badge.fury.io/nu/angular-avatar.svg)](https://badge.fury.io/nu/angular-avatar)
+[![Bower version](https://badge.fury.io/bo/ajsr-confirm.svg)](https://badge.fury.io/bo/ajsr-confirm)
+[![NuGet version](https://badge.fury.io/nu/ajsr-confirm.svg)](https://badge.fury.io/nu/ajsr-confirm)
 -->
 
-This is a simple jQuery plug in that shows a confirmation alert.
+ajsr-confirm is a simple jQuery plug in that shows a confirmation alert.
 
 <!--- You will get this:-->
-![angular-avatar basic usage example](./demo/all-in-one-example.gif?raw=true "angular-avatar basic usage example")
+![ajsr-confirm examples](./demo/ajsrConfirm.png?raw=true "ajsr-confirm examples")
 
 ## Use it this way
 
 #### 1 Download and Install ajsr-confirm:
-<!--- - Bower: **bower install angular-avatar** -->
+<!--- - Bower: **bower install ajsr-confirm** -->
  - NPM: **npm install ajsr-confirm**
  - github: **https://github.com/ajsoriar/ajsr-confirm**
-<!--- - NuGet: **PM> Install-Package angular-avatar** -->
+<!--- - NuGet: **PM> Install-Package ajsr-confirm** -->
 
 #### 2 Include dependences:
 
@@ -43,14 +43,15 @@ $.ajsrConfirm({
 ```
 
 You will get this:
-![angular-avatar basic usage example](./demo/ajsr-confirm-basic-example.png?raw=true "angular-avatar basic usage example")
+
+![ajsr-confirm basic usage example](./demo/ajsr-confirm-basic-example.png?raw=true "ajsr-confirm basic usage example")
 
 3.2 More interesting example including a template and some events:
 
 ```javascript
 $.ajsrConfirm({
 
-    text: "Do yow want to do that?",
+    text: "Do yow really want to do that?",
     confirmButton: "OK",
     cancelButton : "Cancel",
     template: templateName,
@@ -68,7 +69,7 @@ $.ajsrConfirm({
 ```
 3.3 Complete examples in `ajsrConfirm/demo` directory and plunker:
 
-Live example in plunker: http://plnkr.co/edit/TfCxUn?p=preview
+Live example in plunker: https://plnkr.co/EuKZt6
 
 #### 4 License
 
