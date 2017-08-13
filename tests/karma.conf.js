@@ -25,8 +25,8 @@ module.exports = function(config) {
 
             /* We are testing now using version 1.4.5 of angular.js and angular-mocks.js. Version 1.5.0 and 1.5.5 break tests due to some kind of $injector:modulerr? error: Failed to instantiate module ng */
 
-            'node_modules/angular/angular.js',
-            'node_modules/angular-mocks/angular-mocks.js',
+            //'node_modules/angular/angular.js',
+            //'node_modules/angular-mocks/angular-mocks.js',
 
             'dist/ajsrConfirm.js',
             'tests/*.js'

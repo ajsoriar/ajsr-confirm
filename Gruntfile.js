@@ -108,8 +108,6 @@ module.exports = function(grunt) {
             }
         }
 
-
-/*
         ,
         karma: {
             unit: {
@@ -117,7 +115,7 @@ module.exports = function(grunt) {
                 singleRun: true
             }
         }
-*/
+
     });
 
     // Include functionality
@@ -126,9 +124,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    //grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+    grunt.loadNpmTasks('grunt-karma');
 
     // Define tasks
     //grunt.registerTask('default', ['watch']);
@@ -140,7 +139,8 @@ module.exports = function(grunt) {
         'Compiles all of the assets and files to dist directory.',
         ['clean', 'compass', 'copy', 'uglify', 'cssmin']
     );
-    //grunt.registerTask('test', ['karma']);
+
+    grunt.registerTask('test', ['karma']);
     //grunt.registerTask('default', ['sass']);
     //grunt.registerTask('clean', ['clean']);
 };

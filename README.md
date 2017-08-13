@@ -1,4 +1,4 @@
-# ajsr-confirm [![Build Status](https://travis-ci.org/ajsoriar/angular-avatar.svg?branch=master)](https://travis-ci.org/ajsoriar/angular-avatar)
+# ajsr-confirm [![Build Status](https://travis-ci.org/ajsoriar/angular-avatar.svg?branch=master)](https://travis-ci.org/ajsoriar/ajsr-confirm)
 
 [![npm version](https://badge.fury.io/js/angular-avatar.svg)](https://badge.fury.io/js/ajsr-confirm)
 [![Bower version](https://badge.fury.io/bo/angular-avatar.svg)](https://badge.fury.io/bo/ajsr-confirm)
@@ -7,7 +7,7 @@
 [![NuGet version](https://badge.fury.io/nu/angular-avatar.svg)](https://badge.fury.io/nu/angular-avatar)
 -->
 
-This is a simple plug in that shows a confirmation alert.
+This is a simple jQuery plug in that shows a confirmation alert.
 
 <!--- You will get this:-->
 ![angular-avatar basic usage example](./demo/all-in-one-example.gif?raw=true "angular-avatar basic usage example")
@@ -67,6 +67,8 @@ $.ajsrConfirm({
 });
 ```
 3.3 Complete examples in `ajsrConfirm/demo` directory and plunker:
+
+Live example in plunker: http://plnkr.co/edit/TfCxUn?p=preview
 
 #### 4 License
 
