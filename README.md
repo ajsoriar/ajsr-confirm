@@ -7,7 +7,7 @@
 [![NuGet version](https://badge.fury.io/nu/ajsr-confirm.svg)](https://badge.fury.io/nu/ajsr-confirm)
 -->
 
-ajsr-confirm is a simple jQuery plug in that shows a confirmation alert.
+ajsr-confirm is a simple jQuery plugin that shows a confirmation window. It offers an html skeleton that can be used as a base to personalize the UI. Some creative and fun themes are included.
 
 <!--- You will get this:-->
 ![ajsr-confirm examples](./demo/ajsrConfirm.png?raw=true "ajsr-confirm examples")
