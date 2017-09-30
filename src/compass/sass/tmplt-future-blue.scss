@@ -156,7 +156,7 @@ $height: 200px;
             padding: 6px 30px;
             border: 0;
 
-            &.cancel {
+            //&.cancel {
 
                 background-color: #0a74a1;
                 border: 2px solid #008eff;
@@ -195,8 +195,8 @@ $height: 200px;
                 }
 
                 //background-image: linear-gradient(to bottom, #FFC107 0%,#FF9800 10%,#FF5722 25%,#F44336 37%,#E91E63 50%,#FF9800 51%,#FF5722 83%,#F44336 100%);
-            }
-            &.confirm {
+            //}
+            &.default {
 
                 background-color: #3F51B5;
                 border: 2px solid white;
@@ -227,8 +227,8 @@ $height: 200px;
                     background-color: black !important;
                     background-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgb(0, 0, 0) 100%);
                     color: white;
-  
                     background-image: linear-gradient(to bottom, #0086f9 0%,#010d52 100%);
+                    box-shadow: 0px 0px 14px 1px #f2fdff;
                 }
             }
         }

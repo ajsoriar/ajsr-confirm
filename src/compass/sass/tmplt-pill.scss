@@ -175,6 +175,10 @@ $height: 200px;
                     box-shadow: 0 0 13px red;
                 }
 
+                &.default{
+                    box-shadow: 0 3px 9px black;
+                }
+
                 //background-image: linear-gradient(to bottom, #FFC107 0%,#FF9800 10%,#FF5722 25%,#F44336 37%,#E91E63 50%,#FF9800 51%,#FF5722 83%,#F44336 100%);
             }
             &.confirm {
@@ -201,6 +205,11 @@ $height: 200px;
                     //color: white;
                     box-shadow: 0 0 13px #1bff00;
                 }
+
+                &.default{
+                    box-shadow: 0 3px 9px black;
+                }
+
             }
         }
     }

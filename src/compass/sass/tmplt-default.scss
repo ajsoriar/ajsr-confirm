@@ -62,6 +62,9 @@ button:focus {outline:0;} // remove chrome border on focus
         background-image: none;
         border: 1px solid transparent;
         border-radius: 4px;
+        margin-left: 5px;
+
+        /*
         &.cancel {
             color: #333;
             background-color: #fff;
@@ -83,6 +86,33 @@ button:focus {outline:0;} // remove chrome border on focus
                 background-color: #286090;
                 border-color: #204d74;
             }
+        }
+        */
+
+        //.box-shadow: 0 3px 9px black;
+
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+        &:hover {
+            color: #333;
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+
+        &.default {
+
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            margin-bottom: 0;
+            margin-left: 5px;
+            &:hover {
+                color: #fff;
+                background-color: #286090;
+                border-color: #204d74;
+            }
+
         }
     }
 }
