@@ -71,29 +71,51 @@ button:focus {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
-/* line 65, ../compass/sass/tmplt-default.scss */
-.ajsrConfirm .btn.cancel {
+  margin-left: 5px;
+  /*
+  &.cancel {
+      color: #333;
+      background-color: #fff;
+      border-color: #ccc;
+      &:hover {
+          color: #333;
+          background-color: #e6e6e6;
+          border-color: #adadad;
+      }
+  }
+  &.confirm {
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+      margin-bottom: 0;
+      margin-left: 5px;
+      &:hover {
+          color: #fff;
+          background-color: #286090;
+          border-color: #204d74;
+      }
+  }
+  */
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
-/* line 69, ../compass/sass/tmplt-default.scss */
-.ajsrConfirm .btn.cancel:hover {
+/* line 97, ../compass/sass/tmplt-default.scss */
+.ajsrConfirm .btn:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-/* line 75, ../compass/sass/tmplt-default.scss */
-.ajsrConfirm .btn.confirm {
+/* line 103, ../compass/sass/tmplt-default.scss */
+.ajsrConfirm .btn.default {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
   margin-bottom: 0;
   margin-left: 5px;
 }
-/* line 81, ../compass/sass/tmplt-default.scss */
-.ajsrConfirm .btn.confirm:hover {
+/* line 110, ../compass/sass/tmplt-default.scss */
+.ajsrConfirm .btn.default:hover {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;

@@ -148,9 +148,6 @@
   border-radius: 12px;
   padding: 6px 30px;
   border: 0;
-}
-/* line 159, ../compass/sass/tmplt-future-blue.scss */
-.ajsrConfirm.future-blue .btn.cancel {
   background-color: #0a74a1;
   border: 2px solid #008eff;
   margin-left: 10px;
@@ -176,13 +173,13 @@
   background-image: linear-gradient(to bottom, #020b42 0%, #102285 100%);
 }
 /* line 191, ../compass/sass/tmplt-future-blue.scss */
-.ajsrConfirm.future-blue .btn.cancel:hover {
+.ajsrConfirm.future-blue .btn:hover {
   background-color: black;
   background-image: linear-gradient(to bottom, #000000 0%, #021371 100%);
   color: white;
 }
 /* line 199, ../compass/sass/tmplt-future-blue.scss */
-.ajsrConfirm.future-blue .btn.confirm {
+.ajsrConfirm.future-blue .btn.default {
   background-color: #3F51B5;
   border: 2px solid white;
   margin-left: 10px;
@@ -203,9 +200,10 @@
   background-image: linear-gradient(to bottom, #29f5ff 0%, #0027ff 100%);
 }
 /* line 226, ../compass/sass/tmplt-future-blue.scss */
-.ajsrConfirm.future-blue .btn.confirm:hover {
+.ajsrConfirm.future-blue .btn.default:hover {
   background-color: black !important;
   background-image: linear-gradient(to bottom, #000000 0%, #000000 100%);
   color: white;
   background-image: linear-gradient(to bottom, #0086f9 0%, #010d52 100%);
+  box-shadow: 0px 0px 14px 1px #f2fdff;
 }

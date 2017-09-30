@@ -23,6 +23,7 @@
                 message: 'Do you really want to do that?',
                 okButton: 'OK',
                 cancelButton: 'Cancel',
+                btnFocus: 1, // Default selected button is 1, 'OK'. It can be set to 0, 'Cancel'. or false. Extra styling will be applied to default button.
                 template: '',
                 showCancel: true,
                 css: '', // extra custom class at the end
@@ -89,10 +90,10 @@
                         '<div class="content"><p>'+ params.message +'</p></div>'+
                         '<div class="footer">';
 
-                        if( params.showCancel ) htmlString += '<button class="btn cancel" type="button">'+ params.cancelButton +'</button>';
+                        if( params.showCancel ) htmlString += '<button id="btn-cancel" class="btn cancel" type="button">'+ params.cancelButton +'</button>';
 
         htmlString +=   ''+
-                        '<button class="btn confirm" type="button">'+ params.okButton +'</button>'+
+                        '<button id="btn-ok" class="btn confirm" type="button">'+ params.okButton +'</button>'+
                         '</div>'+
 
                         '</div>';
@@ -107,7 +108,10 @@
             // ... create one!
 
             componentObj = $("body").append(htmlString);
-            
+
+            // Check default selected button is 1, 'OK'. It can be set to 0, 'Cancel'. Extra styling will be applied to default button.
+            setFocus( params.btnFocus );
+
             /*
             componentObj.find(".confirm").click(function () { confirm(); });
             componentObj.find(".cancel").click(function () { cancel(); });    
@@ -157,12 +161,27 @@
                 params.whenDestroyed();                   
             //})
             
-
             // unbind events       
         }
 
-        return 0;
+        function setFocus( num ){ // 1 is ok btn. 0 is cancel btn.
 
+            // remove both
+            $(".ajsrConfirm .btn").removeClass("default");
+
+            // apply focus
+            if ( num === 1) $(".ajsrConfirm #btn-ok").addClass("default");
+            if ( num === 0) $(".ajsrConfirm #btn-cancel").addClass("default");
+
+            return "All is OK!";
+        }
+
+        // Share the component and a couple of methods in the global scope. This will allow communication with other components
+        window.ajsrConfirm = {};
+        window.ajsrConfirm.setFocus = setFocus;
+        window.ajsrConfirm.cancel = cancel;
+
+        return 0;
     }
 
 }(jQuery));

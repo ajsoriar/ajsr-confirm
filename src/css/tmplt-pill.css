@@ -1,1 +1,203 @@
-.ajsrConfirm-back-bg.pill{background-color:#353535 !important;opacity:0.5 !important}.ajsrConfirm{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}.ajsrConfirm.pill{background-color:#6d1db7;border-radius:0;padding:6px;width:380px;height:200px;left:calc(50% - 200px);top:calc(50% - 200px);border:2px solid #fff;border-radius:1000px;background-image:linear-gradient(to bottom, #900e56 0%,#ffc107 100%)}.ajsrConfirm.pill .layer-1{position:absolute;width:16px;height:16px;top:0px;left:0px}.ajsrConfirm.pill .layer-2{position:absolute;width:16px;height:16px;top:0px;right:0px}.ajsrConfirm.pill .layer-3{position:absolute;width:16px;height:16px;bottom:0px;right:0px}.ajsrConfirm.pill .layer-4{position:absolute;width:16px;height:16px;bottom:0px;left:0px}.ajsrConfirm.pill .title{padding:8px 14px;margin:0;font-size:18px;font-weight:400;line-height:18px;background-color:#f7d56f;border-bottom:1px solid #ebebeb;border-radius:0;padding:15px;border-bottom:1px solid #176ee4;border-top:1px solid #5f0000;border-right:1px solid #680075;border-left:1px solid #11001f;line-height:14px;font-weight:500;text-shadow:0 1px white;color:#900505;border:0;border-radius:26px 26px 0 0;color:#ffc519;text-align:center;font-weight:200;text-shadow:0 1px 1px #000000;background-color:transparent;background-size:100%;background-image:unset;border:0}.ajsrConfirm.pill .content{padding:0px;height:86px;color:#ffffff;text-shadow:0 0px 5px #120054;font-weight:300;font-size:24px;text-align:center;line-height:52px;background-color:transparent;background-image:unset;font-size:26px}.ajsrConfirm.pill .footer{padding:3px;text-align:right;border-top:1px solid #e5e5e5;background-color:#f6f6f6;border-radius:0;bottom:10px;position:relative;background-color:#f0f0f0;padding:13px;border-radius:0;bottom:0px;position:relative;background-color:#f0f0f0;padding:0 10px 0 0;height:48px;border:1px solid #3e0080;border-bottom:1px solid #e7ae00;border-radius:0 0 26px 26px;background-color:transparent;border-bottom:1px solid #000000;text-align:center;background-image:linear-gradient(to bottom, #5533bd 0%,#170844 100%);background-color:transparent;background-image:unset;border:0}.ajsrConfirm.pill .btn{font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;padding:4px 10px;border-radius:100px;margin-top:7px;padding:4px 30px;background-color:#0a74a1;border:2px solid white;margin-left:15px;text-shadow:0 1px 0 black;color:white}.ajsrConfirm.pill .btn.cancel{background-color:#0a74a1;border:2px solid white;margin-left:15px;text-shadow:0 1px 0 black;color:white;background-image:linear-gradient(to bottom, #ff5722 0%,#9c27b0 100%)}.ajsrConfirm.pill .btn.cancel:hover{background-color:black;box-shadow:0 0 13px red}.ajsrConfirm.pill .btn.cancel.default{box-shadow:0 3px 9px black}.ajsrConfirm.pill .btn.confirm{background-color:#00a800;border:2px solid white;margin-left:15px;text-shadow:0 1px 0 black;color:white;background-color:#bfd255;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFBFD255', endColorstr='#FF9ECB2D');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JmZDI1NSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOGViOTJhIi8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiM3MmFhMDAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5ZWNiMmQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bfd255),color-stop(50%, #8eb92a),color-stop(51%, #72aa00),color-stop(100%, #9ecb2d));background-image:-moz-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);background-image:-webkit-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);background-image:linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%)}.ajsrConfirm.pill .btn.confirm:hover{background-color:black;box-shadow:0 0 13px #1bff00}.ajsrConfirm.pill .btn.confirm.default{box-shadow:0 3px 9px black}
+/* css */
+/* line 5, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm-back-bg.pill {
+  background-color: #353535 !important;
+  opacity: 0.5 !important;
+}
+
+/* line 15, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 17, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill {
+  background-color: #6d1db7;
+  border-radius: 0;
+  padding: 6px;
+  width: 380px;
+  height: 200px;
+  left: calc(50% - 200px);
+  top: calc(50% - 200px);
+  border: 2px solid white;
+  border-radius: 1000px;
+  background-image: linear-gradient(to bottom, #900e56 0%, #ffc107 100%);
+}
+/* line 35, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .layer-1 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0px;
+  left: 0px;
+}
+/* line 40, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .layer-2 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0px;
+  right: 0px;
+}
+/* line 45, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .layer-3 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  bottom: 0px;
+  right: 0px;
+}
+/* line 50, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .layer-4 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  bottom: 0px;
+  left: 0px;
+}
+/* line 55, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: #f7d56f;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 0;
+  padding: 15px;
+  border-bottom: 1px solid #176ee4;
+  border-top: 1px solid #5f0000;
+  border-right: 1px solid #680075;
+  border-left: 1px solid #11001f;
+  line-height: 14px;
+  font-weight: 500;
+  text-shadow: 0 1px white;
+  color: #900505;
+  border: 0;
+  border-radius: 26px 26px 0 0;
+  color: #ffc519;
+  text-align: center;
+  font-weight: 200;
+  text-shadow: 0 1px 1px #000000;
+  background-color: transparent;
+  background-size: 100%;
+  background-image: unset;
+  border: 0;
+}
+/* line 84, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .content {
+  padding: 0px;
+  height: 86px;
+  color: #ffffff;
+  text-shadow: 0 0px 5px #120054;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  line-height: 52px;
+  background-color: transparent;
+  background-image: unset;
+  font-size: 26px;
+}
+/* line 97, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .footer {
+  padding: 3px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f6f6f6;
+  border-radius: 0;
+  bottom: 10px;
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 13px;
+  border-radius: 0;
+  bottom: 0px;
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 0 10px 0 0;
+  height: 48px;
+  border: 1px solid #3e0080;
+  border-bottom: 1px solid #e7ae00;
+  border-radius: 0 0 26px 26px;
+  background-color: transparent;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #5533bd 0%, #170844 100%);
+  background-color: transparent;
+  background-image: unset;
+  border: 0;
+}
+/* line 124, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-top: 7px;
+  padding: 4px 30px;
+  background-color: #0a74a1;
+  border: 2px solid white;
+  margin-left: 15px;
+  text-shadow: 0 1px 0 black;
+  color: white;
+}
+/* line 143, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.cancel {
+  background-color: #0a74a1;
+  border: 2px solid white;
+  margin-left: 15px;
+  text-shadow: 0 1px 0 black;
+  color: white;
+  /*
+  background-color: #b8e1fc; // Old browsers
+  @include filter-gradient(#b8e1fc,
+  #bdf3fd,
+  vertical); // IE6-9
+  @include background-image(linear-gradient(top,
+  #FFC107 0%,
+  #FF9800 10%,
+  #FF5722 25%,
+  #F44336 37%,
+  #E91E63 50%,
+  #FF9800 51%,
+  #FF5722 83%,
+  #F44336 100%));
+  */
+  background-image: linear-gradient(to bottom, #ff5722 0%, #9c27b0 100%);
+}
+/* line 172, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.cancel:hover {
+  background-color: black;
+  box-shadow: 0 0 13px red;
+}
+/* line 178, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.cancel.default {
+  box-shadow: 0 3px 9px black;
+}
+/* line 184, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.confirm {
+  background-color: #00a800;
+  border: 2px solid white;
+  margin-left: 15px;
+  text-shadow: 0 1px 0 black;
+  color: white;
+  background-color: #bfd255;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFBFD255', endColorstr='#FF9ECB2D');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JmZDI1NSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOGViOTJhIi8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiM3MmFhMDAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5ZWNiMmQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bfd255), color-stop(50%, #8eb92a), color-stop(51%, #72aa00), color-stop(100%, #9ecb2d));
+  background-image: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+  background-image: -webkit-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+  background-image: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+}
+/* line 203, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.confirm:hover {
+  background-color: black;
+  box-shadow: 0 0 13px #1bff00;
+}
+/* line 209, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.confirm.default {
+  box-shadow: 0 3px 9px black;
+}

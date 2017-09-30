@@ -171,7 +171,11 @@
   background-color: black;
   box-shadow: 0 0 13px red;
 }
-/* line 180, ../compass/sass/tmplt-pill.scss */
+/* line 178, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.cancel.default {
+  box-shadow: 0 3px 9px black;
+}
+/* line 184, ../compass/sass/tmplt-pill.scss */
 .ajsrConfirm.pill .btn.confirm {
   background-color: #00a800;
   border: 2px solid white;
@@ -188,8 +192,12 @@
   background-image: -webkit-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
   background-image: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
 }
-/* line 199, ../compass/sass/tmplt-pill.scss */
+/* line 203, ../compass/sass/tmplt-pill.scss */
 .ajsrConfirm.pill .btn.confirm:hover {
   background-color: black;
   box-shadow: 0 0 13px #1bff00;
+}
+/* line 209, ../compass/sass/tmplt-pill.scss */
+.ajsrConfirm.pill .btn.confirm.default {
+  box-shadow: 0 3px 9px black;
 }
