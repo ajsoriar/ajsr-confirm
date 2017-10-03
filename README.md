@@ -41,7 +41,7 @@ ajsr-confirm is a simple jQuery plugin that shows a confirmation window. It offe
 
 ```javascript
 $.ajsrConfirm({
-    text: "Do yow want to do that?"
+    message: "Do yow want to do that?"
 });
 ```
 
@@ -53,8 +53,8 @@ You will get this: (bootstrap-like theme will be used by default)
 
 ```javascript
 $.ajsrConfirm({
-
-    text: "Do yow really want to do that?",
+    title: "Title",
+    message: "Do yow really want to do that?",
     confirmButton: "OK",
     cancelButton : "Cancel",
     template: 'windows-98',
