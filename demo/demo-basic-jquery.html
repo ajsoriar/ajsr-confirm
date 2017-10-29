@@ -3,14 +3,14 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ajsrConfirm - Complete functionality example</title>
+        <title>ajsrConfirm - Basic example</title>
         <link rel="stylesheet" href="../dist/css/tmplt-default.css">
     </head>
 
     <body>
-
-        <h1>Complete functionality example.</h1>
         
+        <h1>Simple basic example.</h1>
+
         <input type="button" onclick="confirmation()" value="Show confirmation window!">
 
 <script
@@ -18,17 +18,19 @@
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
 
+        <!-- <script src="../dist/ajsr-jq-confirm.js"></script> -->
         <script src="../dist/ajsr-jq-confirm.js"></script>
         <script language="javascript">
         	
-        function confirmation ( myText ) {
+        function confirmation () {
+
+            // jQuery version
 
         	$.ajsrConfirm({
 
-                message: myText || "Sure?",
+                message: "Yes or no?",
                 confirmButton: "OK",
                 cancelButton : "Cancel",
-                template: "default",
                 onConfirm: function() {
 
                     console.log("Confirm!");
@@ -40,11 +42,33 @@
 
             });
 
+            console.log("ajsrConfirm:", ajsrConfirm );
+
+            /*
+
+            // js version, no jQuery
+
+            ajsrConfirm({
+
+                message: "Yes or no?",
+                confirmButton: "OK",
+                cancelButton : "Cancel",
+                onConfirm: function() {
+
+                    console.log("Confirm!");
+                },
+                onCancel: function() {
+
+                    console.log("Cancel");
+                }
+
+            });
+
+            */
+
         }
 
         confirmation();
-        confirmation("Hello!");
-        confirmation("Error in the console!");
 
         </script>
 

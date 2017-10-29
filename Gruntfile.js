@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
         clean: {
             build: {
-                src: ['dist/*.*','src/css/*.css']
+                src: ['dist/*.*','dist/css/*.*','src/css/*.css']
             }
         },
         copy: {
@@ -66,7 +66,8 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    'dist/ajsrConfirm.min.js': ['dist/ajsrConfirm.js']
+                    'dist/ajsr-jq-confirm.min.js': ['dist/ajsr-jq-confirm.js'], // pure javascript version
+                    'dist/ajsr-js-confirm.min.js': ['dist/ajsr-js-confirm.js'] // jquery version
                 }
             }
         },
@@ -92,8 +93,6 @@ module.exports = function(grunt) {
                     //'src/ajsrConfirm.css': 'src/sass/ajsrConfirm.scss'
                 }
                 */
-
-
             }
         },
         compass: {
