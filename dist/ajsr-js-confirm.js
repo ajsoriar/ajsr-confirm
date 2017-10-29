@@ -1,7 +1,7 @@
 /**
  * ajsr-confirm
- * jQuery confirm dialog box including several fun css templates.
- * @version v1.1.1 - 2017-9-30
+ * javascript confirm dialog box including several fun css templates.
+ * @version v1.1.1 - 2017-10-29
  * @link https://github.com/ajsoriar/ajsr-confirm
  * @author Andres J. Soria R. <ajsoriar@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
