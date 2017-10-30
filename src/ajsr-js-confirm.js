@@ -72,7 +72,7 @@
         } else {
 
             _modal_style = 'position: fixed; z-index: 10001; '+ params.template;
-            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; width: 100%; z-index: 10000;";
         }
 
         htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
