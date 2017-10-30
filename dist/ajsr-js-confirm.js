@@ -1,7 +1,7 @@
 /**
  * ajsr-confirm
  * javascript confirm dialog box including several fun css templates.
- * @version v1.2.0 - 2017-10-29
+ * @version v1.2.1 - 2017-10-30
  * @link https://github.com/ajsoriar/ajsr-confirm
  * @author Andres J. Soria R. <ajsoriar@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -72,7 +72,7 @@
         } else {
 
             _modal_style = 'position: fixed; z-index: 10001; '+ params.template;
-            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: absolute; top: 0; width: 100%; z-index: 10000;";
+            _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; width: 100%; z-index: 10000;";
         }
 
         htmlString +=   '<div  class="ajsrConfirm-back-bg '+ params.template +' '+ params.css +' " style=" '+ _bg_layer_style +' '+ params.bgStyle +' "></div>';
