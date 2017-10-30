@@ -2,7 +2,7 @@
   "name": "ajsr-confirm",
   "version": "1.2.0",
   "description": "Javascript confirm dialog box including several fun css templates.",
-  "main": "dist/ajsr-confirm.js",
+  "main": "dist/ajsr-jq-confirm.min.js",
   "directories": {
     "test": "test"
   },
@@ -42,13 +42,11 @@
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "~0.2.2",
-
     "grunt-karma": "^0.12.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.3",
     "karma-jasmine": "^0.1.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "phantomjs": "^1.9.17"
-
   }
 }
