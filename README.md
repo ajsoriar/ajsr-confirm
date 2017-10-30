@@ -7,7 +7,7 @@
 [![NuGet version](https://badge.fury.io/nu/ajsr-confirm.svg)](https://badge.fury.io/nu/ajsr-confirm)
 -->
 
-ajsr-confirm is a simple javascript plugin that shows a confirmation window. It offers an html skeleton that can be used as a base to personalize the UI. Some creative and fun themes are included. A pure javascript and jQuery versions are available in dist folder.  
+ajsr-confirm is a simple javascript plugin that shows a confirmation window. It offers an html skeleton that can be used as a base to personalize the UI. Some creative and fun themes are included. Pure javascript and jQuery versions are available in dist folder.  
 
 <!--- You will get this:-->
 ![ajsr-confirm examples](./demo/ajsrConfirm.png?raw=true "ajsr-confirm examples")
@@ -24,10 +24,10 @@ ajsr-confirm is a simple javascript plugin that shows a confirmation window. It 
 
 #### 2 Include dependences:
 
-2.1 ajsr-jq-confirm.min.js and ajsr-js-confirm.min.js are in `dist` folder.
+2.1 Use ajsr-jq-confirm.min.js or ajsr-js-confirm.min.js. Both are in `dist` folder.
 
-- ajsr-jq-confirm.min.js depends on jQuery
-- and ajsr-js-confirm.min.js is pure javascript so it doesn't need jQuery.
+- `ajsr-jq-confirm.min.js` depends on jQuery
+- `ajsr-js-confirm.min.js` is pure javascript so it doesn't need jQuery.
 
 2.2 Initialize the plugin by referencing the necessary files:
 
