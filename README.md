@@ -102,4 +102,4 @@ Live example in plunker: https://plnkr.co/EuKZt6
 
 #### 5 License
 
-React is [MIT licensed](./LICENSE).
+ajsr-confirm is [MIT licensed](./LICENSE).
