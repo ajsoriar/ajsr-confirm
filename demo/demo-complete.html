@@ -13,38 +13,37 @@
         
         <input type="button" onclick="confirmation()" value="Show confirmation window!">
 
-<script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+			    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			    crossorigin="anonymous"></script>
 
         <script src="../dist/ajsr-jq-confirm.js"></script>
         <script language="javascript">
-        	
-        function confirmation ( myText ) {
+                
+            function confirmation ( myText ) {
 
-        	$.ajsrConfirm({
+                $.ajsrConfirm({
 
-                message: myText || "Sure?",
-                confirmButton: "OK",
-                cancelButton : "Cancel",
-                template: "default",
-                onConfirm: function() {
+                    message: myText || "Sure?",
+                    confirmButton: "OK",
+                    cancelButton : "Cancel",
+                    template: "default",
+                    onConfirm: function() {
 
-                    console.log("Confirm!");
-                },
-                onCancel: function() {
+                        console.log("Confirm!");
+                    },
+                    onCancel: function() {
 
-                    console.log("Cancel");
-                }
+                        console.log("Cancel");
+                    }
 
-            });
+                });
 
-        }
+            }
 
-        confirmation();
-        confirmation("Hello!");
-        confirmation("Error in the console!");
+            confirmation();
+            confirmation("Hello!");
+            confirmation("Error in the console!");
 
         </script>
 

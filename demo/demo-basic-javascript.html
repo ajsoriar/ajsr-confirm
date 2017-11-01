@@ -10,66 +10,59 @@
     <body>
         
         <h1>Simple basic example.</h1>
-
         <input type="button" onclick="confirmation()" value="Show confirmation window!">
-<!--
-<script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
--->
 
         <!-- <script src="../dist/ajsr-jq-confirm.js"></script> -->
         <script src="../dist/ajsr-js-confirm.min.js"></script>
         <script language="javascript">
         	
-        function confirmation () {
+            function confirmation () {
 
-            // jQuery version
+                // jQuery version
 
-            /*
+                /*
 
-        	$.ajsrConfirm({
+                $.ajsrConfirm({
 
-                message: "Yes or no?",
-                confirmButton: "OK",
-                cancelButton : "Cancel",
-                onConfirm: function() {
+                    message: "Yes or no?",
+                    confirmButton: "OK",
+                    cancelButton : "Cancel",
+                    onConfirm: function() {
 
-                    console.log("Confirm!");
-                },
-                onCancel: function() {
+                        console.log("Confirm!");
+                    },
+                    onCancel: function() {
 
-                    console.log("Cancel");
-                }
+                        console.log("Cancel");
+                    }
 
-            });
+                });
 
-            */
+                */
 
-            console.log("ajsrConfirm:", ajsrConfirm );
+                console.log("ajsrConfirm:", ajsrConfirm );
 
-            // js version, no jQuery
+                // js version, no jQuery
 
-            ajsrConfirm({
+                window.ajsrConfirm({
 
-                message: "Yes or no?",
-                confirmButton: "OK",
-                cancelButton : "Cancel",
-                onConfirm: function() {
+                    message: "Yes or no?",
+                    confirmButton: "OK",
+                    cancelButton : "Cancel",
+                    onConfirm: function() {
 
-                    console.log("Confirm!");
-                },
-                onCancel: function() {
+                        console.log("Confirm!");
+                    },
+                    onCancel: function() {
 
-                    console.log("Cancel");
-                }
+                        console.log("Cancel");
+                    }
 
-            });
+                });
 
-        }
+            }
 
-        confirmation();
+            confirmation();
 
         </script>
 
