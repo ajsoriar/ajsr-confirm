@@ -1,6 +1,6 @@
 {
   "name": "ajsr-confirm",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Javascript confirm dialog box including several fun css templates.",
   "main": "dist/ajsr-js-confirm.min.js",
   "directories": {
