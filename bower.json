@@ -6,7 +6,7 @@
     "Andres J. Soria R. <ajsoriar@gmail.com>"
   ],
   "description": "Javascript confirm dialog box including several fun css templates.",
-  "main": "dist/ajsrConfirm.min.js",
+  "main": "dist/ajsr-js-confirm.min.js",
   "moduleType": [],
   "keywords": [
     "jQuery-confirm",
