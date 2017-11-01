@@ -29,7 +29,7 @@ module.exports = function(config) {
             //'node_modules/angular/angular.js',
             //'node_modules/angular-mocks/angular-mocks.js',
 
-            'dist/ajsrConfirm.js',
+            'dist/ajsr-js-confirm.min.js',
             'tests/*.js'
         ],
 

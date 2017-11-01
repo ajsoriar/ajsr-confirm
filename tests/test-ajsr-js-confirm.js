@@ -2,7 +2,7 @@
 
 //var myApp = angular.module('myApp', ['ngAvatar']);
 
-describe('Unit testing ajsrConfirm', function() {
+describe('Unit testing ajsrConfirm, jQuery version.', function() {
 
     /*
 
