@@ -18,6 +18,7 @@ ajsr-confirm is a simple javascript plugin that shows a confirmation window. It 
 
  - NPM: **npm install ajsr-confirm**
  - Bower: **bower install ajsr-confirm**
+ - Yarn: **yarn add ajsr-confirm**
  - github: **https://github.com/ajsoriar/ajsr-confirm**
 <!--- - NuGet: **PM> Install-Package ajsr-confirm** -->
 
