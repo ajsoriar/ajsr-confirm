@@ -125,7 +125,7 @@
 
             if (1) {
                 //componentObj.find(".ajsrConfirm-back-bg").click( function () { cancel(); }); 
-                document.getElementsByClassName("ajsrConfirm-back-bg")[0].addEventListener("click", function( event ){ confirm(); });
+                document.getElementsByClassName("ajsrConfirm-back-bg")[0].addEventListener("click", function( event ){ cancel(); });
             }
 
             //componentObj.find(".confirm").click( function () { confirm(); });
@@ -190,12 +190,33 @@
             return "All is OK!";
         }
 
+        function hasClass(element, className) {
+            return element.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(element.className);
+        }
+
+        function getFocused(){
+            var el = document.getElementById("btn-ok");
+            if ( hasClass( el, 'default') ) return 1;
+            return 0;
+        }
+
+        function doDefault() {
+            if ( getFocused() === 1 ) {
+                confirm();
+            } else {
+                cancel();
+            }
+        }
+
         // Share the component and a couple of methods in the global scope. This will allow communication with other components
         //window.ajsrConfirm = {};
         window.ajsrConfirm.setFocus = setFocus;
         window.ajsrConfirm.cancel = cancel;
+        window.ajsrConfirm.confirm = confirm;
+        window.ajsrConfirm.getFocused = getFocused;
+        window.ajsrConfirm.doDefault = doDefault;
 
-        return 0;
+        return 0
     }
 
 }());
