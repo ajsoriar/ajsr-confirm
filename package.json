@@ -47,6 +47,9 @@
     "karma": "^0.13.3",
     "karma-jasmine": "^0.1.0",
     "karma-phantomjs-launcher": "^0.2.0",
-    "phantomjs": "^1.9.17"
+    "phantomjs": "^1.9.17",
+    "eslint": "^5.12.0"
+  },
+  "dependencies": {  
   }
 }
