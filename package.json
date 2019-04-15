@@ -14,18 +14,16 @@
     "url": "https://github.com/ajsoriar/ajsr-confirm.git"
   },
   "keywords": [
-    "jQuery-confirm",
     "ajsr-confirm",
     "js-confirm",
     "confirmation-box",
     "confirm",
     "jsconfirm",
-    "jqconfirm",
     "confirmjs"
   ],
   "author": {
     "name": "Andres J. Soria R.",
-    "email": "<ajsoriar@gmail.com>"
+    "email": "ajsoriar@gmail.com"
   },
   "license": "MIT",
   "bugs": {

@@ -4,22 +4,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        /*
-        watch: {
-            scripts: {
-                files: [
-                    'src/*.js',
-                    'src/sass/*.scss'
-                ],
-                tasks: ['sass'], //,'test'],
-                options: {
-                    livereload: 9090,
-                }
-            }
-        },
-        */
-
         clean: {
             build: {
                 src: ['dist/*.*','dist/css/*.*','src/css/*.css']
@@ -43,17 +27,7 @@ module.exports = function(grunt) {
                     ],
                     dest: 'dist/css',
                     expand: true
-                }
-                // ,{
-                //     cwd: 'src/images',
-                //     src: [
-                //         '*.js',
-                //         '*.css'
-                //     ],
-                //     dest: 'dist/templates/',
-                //     expand: true  
-                // }
-                ]
+                }]
             }
         },
         uglify: {

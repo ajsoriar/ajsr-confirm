@@ -1,21 +1,11 @@
-/**
- * ajsr-confirm
- * jQuery confirm dialog box including several fun css templates.
- * @version v1.2.2 - 2017-11-01
- * @link https://github.com/ajsoriar/ajsr-confirm
- * @author Andres J. Soria R. <ajsoriar@gmail.com>
- * @license MIT License, http://www.opensource.org/licenses/MIT
- */
-
-(function($) {
+(function() {
 
     console.log("ajsrConfirm plug-in!");
 
-    $.ajsrConfirm = function(options, e) {
+    //$.ajsrConfirm = function(options, e) {
+    window.ajsrConfirm = function(options, e) {
 
         'use strict';
-
-        // init vars 
 
         var _WIDTH = 340, _HEIGHT = 130, componentObj,
             defaults = {
@@ -37,11 +27,16 @@
                 beforeClose: function(){ console.log("beforeClose(): do nothing by default"); },
                 whenDestroyed: function(){ console.log("whenDestroyed(): do nothing by default"); }
             },
-            params = $.extend(defaults, options),
+            //params = $.extend(defaults, options),
+            params = {},
             _timestamp = Date.now(),
             htmlString = '',
             _bg_layer_style = '',
             _modal_style = '';
+
+        // set params
+        for(var _obj in defaults) params[_obj ]=defaults[_obj];
+        for(var _obj in options) params[_obj ]=options[_obj];
 
         // template
 
@@ -100,32 +95,32 @@
 
         // functionality
 
-
-        if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
+        //if ( $(".ajsrConfirm").length === 0 ){ // If there are no modals then ...
+        if ( document.getElementsByClassName("ajsrConfirm").length === 0 ) {
 
             params.beforeShow();
 
             // ... create one!
 
-            componentObj = $("body").append(htmlString);
+            //componentObj = $("body").append(htmlString);
+            var el = document.createElement('div');
+            el.setAttribute("id", "ajsrConfirm-container" );
+            el.innerHTML = htmlString;
+            document.body.appendChild(el);
 
             // Check default selected button is 1, 'OK'. It can be set to 0, 'Cancel'. Extra styling will be applied to default button.
             setFocus( params.btnFocus );
 
-            /*
-            componentObj.find(".confirm").click(function () { confirm(); });
-            componentObj.find(".cancel").click(function () { cancel(); });    
-            // show (change opacity)
-            componentObj.fadeIn();
-            */
-
             if (1) {
-                componentObj.find(".ajsrConfirm-back-bg").click( function () { cancel(); }); 
+                //componentObj.find(".ajsrConfirm-back-bg").click( function () { cancel(); }); 
+                document.getElementsByClassName("ajsrConfirm-back-bg")[0].addEventListener("click", function( event ){ cancel(); });
             }
 
-            componentObj.find(".confirm").click( function () { confirm(); });
-            componentObj.find(".cancel").click( function () { cancel(); });   
-
+            //componentObj.find(".confirm").click( function () { confirm(); });
+            //componentObj.find(".cancel").click( function () { cancel(); });   
+            document.getElementById("btn-ok").addEventListener("click", function( event ){ confirm(); });
+            document.getElementById("btn-cancel").addEventListener("click", function( event ){ cancel(); });
+            
             //$(".ajsrConfirm").fadeIn(); //'fast', function(){ });
 
             params.afterShow();
@@ -156,8 +151,11 @@
             console.log("destroy!");
              
             //componentObj.fadeOut(200, {
-                $(".ajsrConfirm-back-bg").remove();
-                $(".ajsrConfirm").remove();  
+                //$(".ajsrConfirm-back-bg").remove();
+                //$(".ajsrConfirm").remove();
+                var leftSection = document.getElementById("ajsrConfirm-container");
+                leftSection.parentNode.removeChild(leftSection);
+
                 params.whenDestroyed();                   
             //})
             
@@ -167,21 +165,46 @@
         function setFocus( num ){ // 1 is ok btn. 0 is cancel btn.
 
             // remove both
-            $(".ajsrConfirm .btn").removeClass("default");
+            //$(".ajsrConfirm .btn").removeClass("default");
+            document.getElementById("btn-ok").classList.remove("default");
+            document.getElementById("btn-cancel").classList.remove("default");
 
             // apply focus
-            if ( num === 1) $(".ajsrConfirm #btn-ok").addClass("default");
-            if ( num === 0) $(".ajsrConfirm #btn-cancel").addClass("default");
+            //if ( num === 1) $(".ajsrConfirm #btn-ok").addClass("default");
+            //if ( num === 0) $(".ajsrConfirm #btn-cancel").addClass("default");
+            if ( num === 1) document.getElementById("btn-ok").classList.add("default");
+            if ( num === 0) document.getElementById("btn-cancel").classList.add("default");
 
             return "All is OK!";
         }
 
+        function hasClass(element, className) {
+            return element.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(element.className);
+        }
+
+        function getFocused(){
+            var el = document.getElementById("btn-ok");
+            if ( hasClass( el, 'default') ) return 1;
+            return 0;
+        }
+
+        function doDefault() {
+            if ( getFocused() === 1 ) {
+                confirm();
+            } else {
+                cancel();
+            }
+        }
+
         // Share the component and a couple of methods in the global scope. This will allow communication with other components
-        window.ajsrConfirm = {};
+        //window.ajsrConfirm = {};
         window.ajsrConfirm.setFocus = setFocus;
         window.ajsrConfirm.cancel = cancel;
+        window.ajsrConfirm.confirm = confirm;
+        window.ajsrConfirm.getFocused = getFocused;
+        window.ajsrConfirm.doDefault = doDefault;
 
-        return 0;
+        return 0
     }
 
-}(jQuery));
+}());
