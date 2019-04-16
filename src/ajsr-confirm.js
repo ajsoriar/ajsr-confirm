@@ -2,7 +2,6 @@
 
     console.log("ajsrConfirm plug-in!");
 
-    //$.ajsrConfirm = function(options, e) {
     window.ajsrConfirm = function(options, e) {
 
         'use strict';
@@ -51,6 +50,8 @@
                 //'height: '+ _HEIGHT +'px; '+
                 'left: calc(50% - '+ _WIDTH/2 +'px); '+
                 'top: calc(50% - '+ _HEIGHT/2 +'px); '+
+		'left: -webkit-calc(50% - '+ _WIDTH/2 +'px); '+
+                'top: -webkit-calc(50% - '+ _HEIGHT/2 +'px); '+
                 'opacity: 1;';
             
             _bg_layer_style = "background-color: black; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; width: 100%; z-index: 10000;";
